@@ -21,8 +21,7 @@ $holder = foreach ($gpo in $data.gpos.gpo)
 			"StartIn" = $gpoShortcut.properties.startin;
 			"TargetPath" = $gpoShortcut.properties.targetpath
 		}
-		$obj = New-Object -TypeName System.Management.Automation.PSObject -Property $properties
-		$obj
+		New-Object -TypeName System.Management.Automation.PSObject -Property $properties
 	}
 }
 $holder | Export-Csv $outFile -NoTypeInformation
